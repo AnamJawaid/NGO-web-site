@@ -1,2 +1,2 @@
 # NGO-web-site
-Website created using Nodejs, Express and MongoDB/NOSQL
+Website created using Nodejs,HTML, CSS Express and MongoDB/NOSQL
