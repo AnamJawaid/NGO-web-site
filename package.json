@@ -1,0 +1,20 @@
+{
+  "name": "14150",
+  "version": "1.0.0",
+  "description": "Webproject",
+  "main": "mongo_conn.js",
+  "start": "route_angmongo.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.1",
+    "express-validator": "^3.1.2",
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

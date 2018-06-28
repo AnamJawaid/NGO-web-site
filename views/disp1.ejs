@@ -1,0 +1,24 @@
+<html>
+<body bgcolor="yellow" align="left">
+<br/>
+<br/>
+<p ><h1><b>LIST OF PUPILS</b></h1></p>
+<br/>
+<br/>
+  <ul class="pupils">
+  <% for(var i=0; i<pupils.length; i++) {%>
+    <li align="left" class="pupils">
+      <span><%= " ID: " +pupils[i].pupilid+"."%></span>
+      <span><%=" Name: " + pupils[i].pupilname%></span>
+	<span><%=" Age: " + pupils[i].pupilage%></span>
+	<span><%=" Gender: " + pupils[i].pupilgen%></span>
+	<br/>
+	<br/>
+    </li>
+  <% } %>
+</ul>
+<br/>
+<br/>
+<a href="index1.html"> Back</a>
+
+</html>

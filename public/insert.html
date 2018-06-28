@@ -1,0 +1,70 @@
+<html>
+<head>
+	<script src="angular/angular.min.js"> </script>
+</head>
+<script> var myModule = angular.module("myApp",[])  </script>
+<body  bgcolor="yellow" align="center" ng-app="myApp">
+    <form ng-controller='appController' ng-submit="send()">
+      <!--send() function from the controller is called on form submission -->
+     		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<h1 align="center"> <b>PLEASE INSERT PUPIL DETAILS </b> </h1>
+		<br/>
+		<br/>
+		<br/>		
+		<label for="pupilid" > PUPIL ID </label>
+            <input type="text" id="pupilid" ng-model="data.pupilid" /> <br />
+		<br/>
+		<br/>
+        <label for="pupilname"> PUPIL NAME </label>
+                <input type="text" id="pupilname" ng-model="data.pupilname" /> <br /> <br />    
+	<label for="pupilage" > PUPIL AGE </label>
+            <input type="text" id="pupilage" ng-model="data.pupilage" /> <br />
+		<br/>
+		<br/> 
+	<label for="pupilgen" > PUPIL GENDER </label>
+            <input type="text" id="pupilgen" ng-model="data.pupilgen" /> <br />
+		<br/>
+		<br/>   
+        <input type="submit" ng-click="Submit">
+		
+       <div><pre>{{response.data}}</pre>  </div>
+    </form>
+ 
+<a href="index1.html">Back</a>
+     <script>
+	 myModule.controller ("appController",
+        function appController($scope, $http) {
+            /*$http directive is used to communicate to the server */
+            $scope.data = {}
+            $scope.response = {}
+			
+            $scope.send = function () {
+                /*executed when submit is clicked*/          
+				console.log($scope.data.pupilname);
+                var posting = $http({
+			/*posting to /process_get  */
+                    method: 'GET',
+                    url: '/process_get',
+                    params: $scope.data,
+			/*posting to /process_post*/
+                  //  method: 'POST',
+                    //url: '/process_post',
+                    //data: $scope.data,
+                    
+                }).then (function (response) {
+                    /*executed when server responds back*/
+                    console.log(response);
+                    $scope.response.data = response.data;
+                },function (error){
+					console.log(error);
+			});
+            }
+        });
+    </script>
+</body>
+</html>
+
+ 
